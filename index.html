@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/component.css" />
+    <link rel="stylesheet" href="css/searchPag.css" />
+    <link rel="stylesheet" href="css/location.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+
+    <title>Resto</title>
+  </head>
+  <body>
+    <!--nav-->
+    <div class="container">
+      <div class="row navBar">
+        <div
+          class="col-4 fs-1 d-flex justify-content-center align-items-center"
+        >
+          <h1 class="h1">Resto</h1>
+        </div>
+        <div class="col-5 d-flex flex-row justify-content-evenly pt-5">
+          <div>
+            <button class="findButton buttonSearch">
+              <i class="fas fa-search iconLogo"></i>
+            </button>
+          </div>
+          <div>
+            <button class="locationButton">
+              <i class="fas fa-map-marker-alt iconLogo"></i>
+            </button>
+          </div>
+          <div>
+            <button class="shoppingButton">
+              <i class="fas fa-cart-plus iconLogo"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-3 d-flex justify-content-end px-4 py-4">
+          <button class="nemuButton menuLogo">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--nav-->
+    <!--serach page-->
+    <div class="searchPag hidden">
+      <button class="closeButton">&times;</button>
+      <form class="searchArea">
+        <input type="text" id="menu" />
+        <button type="submit" class="searchBtn">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+    <!--serach page-->
+
+    <!--location page-->
+    <div class="locationPage hidden">
+      <button class="locationCloseButton">&times;</button>
+      <div class="googleMap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2033.470169878093!2d17.978053015514035!3d59.35849161572682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9de89215658f%3A0xf2082c016d2c834d!2sICA%20Maxi!5e0!3m2!1sen!2sse!4v1632160494995!5m2!1sen!2sse"
+          width="350"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+    <!--location page-->
+
+    <!--menu-->
+    <div class="menu hidden">
+      <button class="menuCloseButton">&times;</button>
+      <ul>
+        <li><a href="#"></a>HOME</li>
+        <li><a href="#"></a>DISH</li>
+        <li><a href="#"></a>ABOUT</li>
+        <li><a href="#"></a>MENU</li>
+        <li><a href="#"></a>REVIEW</li>
+        <li><a href="#"></a>ORDER</li>
+      </ul>
+    </div>
+    <!--menu-->
+
+    <!--overlay page-->
+    <div class="overlay hidden"></div>
+    <!--overlay page-->
+
+    <!--carousel-->
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+          aria-current="true"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active item-1">
+          <div class="homeText">
+            <h3>Our Special Dish</h3>
+            <h2>FRIED CHICKEN</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              ipsa quibusdam excepturi enim sed quae blanditiis! Nesciunt
+              aspernatur assumenda voluptas quo repellat.
+            </p>
+            <button>ORDER NOW</button>
+          </div>
+          <img src="img/friedchicken.png" class="d-block" alt="friedchicken" />
+        </div>
+        <div class="carousel-item item-2">
+          <div class="homeText">
+            <h3>Our Special Dish</h3>
+            <h2>HOT PIZZA</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              ipsa quibusdam excepturi enim sed quae blanditiis! Nesciunt
+              aspernatur assumenda voluptas quo repellat.
+            </p>
+            <button>ORDER NOW</button>
+          </div>
+          <img src="img/pizza.png" class="d-block" alt="pizza" />
+        </div>
+        <div class="carousel-item item-3">
+          <div class="homeText">
+            <h3>Our Special Dish</h3>
+            <h2>HAMBURGER</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              ipsa quibusdam excepturi enim sed quae blanditiis! Nesciunt
+              aspernatur assumenda voluptas quo repellat.
+            </p>
+            <button>ORDER NOW</button>
+          </div>
+          <img src="img/hamburger.png" class="d-block" alt="hamburger" />
+        </div>
+      </div>
+    </div>
+
+    <!--carousel-->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://pro.fontawesome.com/releases/v5.10.0/js/all.js"
+      integrity="sha384-G/ZR3ntz68JZrH4pfPJyRbjW+c0+ojii5f+GYiYwldYU69A+Ejat6yIfLSxljXxD"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

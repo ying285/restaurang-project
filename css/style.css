@@ -1,0 +1,139 @@
+:root {
+  --primary-color: #06aa6f;
+  --secondary-color: #1b0a82;
+  --background-color-light: #fff;
+  --background-color-medium: #f4f4f4;
+  --background-color-dark: #e7e3e3;
+  --buttonhover-color: #3c25cc;
+
+  --text-primary: #000000;
+  --text-secondary: #908989;
+  --titleText-primary: #1b0a82;
+  --titleText-secondary: #06aa6f;
+  --footerText: #fff;
+  --overlayText: #f4f4f4;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%; /* 1rem=10px*/
+  background-color: silver;
+}
+
+.navBar {
+  background-color: var(--background-color-medium);
+  border-bottom: 2px solid var(--primary-color);
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.35);
+}
+
+.h1 {
+  color: var(--secondary-color);
+  font-weight: 900;
+}
+
+.iconLogo {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.menuLogo {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+}
+
+.findButton,
+.locationButton,
+.shoppingButton,
+.nemuButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}
+
+.closeButton,
+.locationCloseButton {
+  position: absolute;
+  top: -3rem;
+  left: 90%;
+  border: 0;
+  background-color: transparent;
+  color: var(--overlayText);
+  font-size: 3rem;
+}
+
+.menuCloseButton {
+  position: absolute;
+  top: -6rem;
+  left: 160%;
+  border: 0;
+  background-color: transparent;
+  color: var(--overlayText);
+  font-size: 3rem;
+}
+
+.homeText {
+  margin-left: 7rem;
+  margin-top: 3rem;
+}
+
+.homeText p {
+  width: 80%;
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+}
+
+.homeText h2 {
+  color: var(--secondary-color);
+  font-size: 2.2rem;
+}
+
+.homeText h3 {
+  color: var(--primary-color);
+  font-size: 1.7rem;
+}
+
+.homeText button,
+button:link,
+button:visited {
+  border: none;
+  background-color: var(--secondary-color);
+  padding: 0.5rem;
+  color: white;
+  font-weight: 900;
+  font-size: 0.8rem;
+  border-radius: 50px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  width: 7rem;
+}
+
+.homeText button:hover {
+  background-color: var(--buttonhover-color);
+}
+
+.homeText button:active {
+  transform: translateY(3px);
+}
+
+.item-1 img,
+.item-2 img,
+.item-3 img {
+  height: 70%;
+  width: 70%;
+  margin-left: 5rem;
+}

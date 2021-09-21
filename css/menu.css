@@ -1,0 +1,15 @@
+.menu {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -55%);
+  z-index: 15;
+}
+
+.menu li {
+  list-style: none;
+  font-size: 2.5rem;
+  color: var(--overlayText);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+}

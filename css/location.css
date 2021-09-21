@@ -1,0 +1,12 @@
+.locationPage {
+  z-index: 15;
+  position: relative;
+}
+
+.googleMap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, 15%);
+  width: 70%;
+}
