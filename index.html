@@ -30,7 +30,7 @@
   </head>
   <body>
     <!--nav-->
-    <div class="container">
+    <div class="container-fluid p-0">
       <div class="row navBar">
         <div
           class="col-4 fs-1 d-flex justify-content-center align-items-center"
@@ -123,6 +123,12 @@
           class="active"
           aria-current="true"
           aria-label="Slide 1"
+          style="
+            height: 0.5rem;
+            width: 0.5rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+          "
         ></button>
         <button
           type="button"
@@ -130,17 +136,29 @@
           data-bs-slide-to="1"
           aria-label="Slide 2"
           aria-current="true"
+          style="
+            height: 0.5rem;
+            width: 0.5rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+          "
         ></button>
         <button
           type="button"
           data-bs-target="#carouselExampleIndicators"
           data-bs-slide-to="2"
           aria-label="Slide 3"
+          style="
+            height: 0.5rem;
+            width: 0.5rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+          "
         ></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active item-1">
-          <div class="homeText">
+          <div class="homeText1 homeText">
             <h3>Our Special Dish</h3>
             <h2>FRIED CHICKEN</h2>
             <p>
@@ -150,10 +168,16 @@
             </p>
             <button>ORDER NOW</button>
           </div>
-          <img src="img/friedchicken.png" class="d-block" alt="friedchicken" />
+
+          <img
+            src="img/friedchicken.png"
+            class="d-block img-1"
+            alt="friedchicken"
+          />
         </div>
+
         <div class="carousel-item item-2">
-          <div class="homeText">
+          <div class="homeText2 homeText">
             <h3>Our Special Dish</h3>
             <h2>HOT PIZZA</h2>
             <p>
@@ -163,10 +187,10 @@
             </p>
             <button>ORDER NOW</button>
           </div>
-          <img src="img/pizza.png" class="d-block" alt="pizza" />
+          <img src="img/pizza.png" class="d-block img-2" alt="pizza" />
         </div>
         <div class="carousel-item item-3">
-          <div class="homeText">
+          <div class="homeText3 homeText">
             <h3>Our Special Dish</h3>
             <h2>HAMBURGER</h2>
             <p>
@@ -176,7 +200,7 @@
             </p>
             <button>ORDER NOW</button>
           </div>
-          <img src="img/hamburger.png" class="d-block" alt="hamburger" />
+          <img src="img/hamburger.png" class="d-block img-3" alt="hamburger" />
         </div>
       </div>
     </div>

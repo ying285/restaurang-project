@@ -79,15 +79,14 @@ body {
 .menuCloseButton {
   position: absolute;
   top: -6rem;
-  left: 160%;
+  left: 100%;
   border: 0;
   background-color: transparent;
   color: var(--overlayText);
   font-size: 3rem;
 }
-
 .homeText {
-  margin-left: 7rem;
+  margin-left: 4rem;
   margin-top: 3rem;
 }
 
@@ -100,6 +99,7 @@ body {
 .homeText h2 {
   color: var(--secondary-color);
   font-size: 2.2rem;
+  font-weight: 600;
 }
 
 .homeText h3 {
@@ -107,33 +107,23 @@ body {
   font-size: 1.7rem;
 }
 
-.homeText button,
-button:link,
-button:visited {
-  border: none;
-  background-color: var(--secondary-color);
-  padding: 0.5rem;
-  color: white;
-  font-weight: 900;
-  font-size: 0.8rem;
-  border-radius: 50px;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s;
-  width: 7rem;
-}
-
-.homeText button:hover {
-  background-color: var(--buttonhover-color);
-}
-
-.homeText button:active {
-  transform: translateY(3px);
-}
-
 .item-1 img,
 .item-2 img,
 .item-3 img {
   height: 70%;
   width: 70%;
-  margin-left: 5rem;
+  margin-left: 2.8rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .item1,
+  .item2,
+  .item-3 {
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
 }
