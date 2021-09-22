@@ -30,14 +30,51 @@
   </head>
   <body>
     <!--nav-->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 navContainer">
       <div class="row navBar">
         <div
-          class="col-4 fs-1 d-flex justify-content-center align-items-center"
+          class="
+            col-4 col-lg-2
+            fs-1
+            d-flex
+            justify-content-center
+            align-items-center
+          "
         >
           <h1 class="h1">Resto</h1>
         </div>
-        <div class="col-5 d-flex flex-row justify-content-evenly pt-5">
+        <!--navmenu for large screen-->
+        <div
+          class="
+            col-lg-8
+            d-none d-lg-flex
+            justify-content-evenly
+            align-items-center
+            navbarMenu
+            w-50
+          "
+        >
+          <div class="navItem"><a>Home</a></div>
+          <div class="navItem"><a>Dish</a></div>
+          <div class="navItem"><a>About</a></div>
+          <div class="navItem"><a>Menu</a></div>
+          <div class="navItem"><a>Reviews</a></div>
+          <div class="navItem"><a>Order</a></div>
+        </div>
+        <!--navmenu for large screen-->
+
+        <div
+          class="
+            col-5 col-lg-2
+            d-flex
+            flex-row
+            justify-content-evenly justify-content-lg-end
+            pt-5
+            py-lg-5
+            px-lg-4
+            functionButtons
+          "
+        >
           <div>
             <button class="findButton buttonSearch">
               <i class="fas fa-search iconLogo"></i>
@@ -55,7 +92,7 @@
           </div>
         </div>
 
-        <div class="col-3 d-flex justify-content-end px-4 py-4">
+        <div class="col-3 d-lg-none d-flex justify-content-end px-4 py-4">
           <button class="nemuButton menuLogo">
             <i class="fas fa-bars"></i>
           </button>
@@ -95,12 +132,12 @@
     <div class="menu hidden">
       <button class="menuCloseButton">&times;</button>
       <ul>
-        <li><a href="#"></a>HOME</li>
-        <li><a href="#"></a>DISH</li>
-        <li><a href="#"></a>ABOUT</li>
-        <li><a href="#"></a>MENU</li>
-        <li><a href="#"></a>REVIEW</li>
-        <li><a href="#"></a>ORDER</li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">DISH</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">MENU</a></li>
+        <li><a href="#">REVIEW</a></li>
+        <li><a href="#">ORDER</a></li>
       </ul>
     </div>
     <!--menu-->
@@ -128,6 +165,7 @@
             width: 0.5rem;
             border-radius: 50%;
             margin-right: 1rem;
+            background-color: black;
           "
         ></button>
         <button
@@ -141,6 +179,7 @@
             width: 0.5rem;
             border-radius: 50%;
             margin-right: 1rem;
+            background-color: black;
           "
         ></button>
         <button
@@ -153,6 +192,7 @@
             width: 0.5rem;
             border-radius: 50%;
             margin-right: 1rem;
+            background-color: black;
           "
         ></button>
       </div>

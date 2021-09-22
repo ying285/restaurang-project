@@ -1,6 +1,6 @@
 .homeText button,
-button:link,
-button:visited {
+.homeText button:link,
+.homeText button:visited {
   border: none;
   background-color: var(--secondary-color);
   padding: 0.5rem;

@@ -17,7 +17,7 @@
 body {
   font-family: "Roboto", sans-serif;
   font-size: 62.5%; /* 1rem=10px*/
-  background-color: silver;
+  background-color: var(--background-color-light);
 }
 
 .navBar {
@@ -48,6 +48,10 @@ body {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+.functionButtons {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .overlay {
@@ -118,12 +122,99 @@ body {
 }
 
 @media (min-width: 768px) {
-  .item1,
-  .item2,
-  .item-3 {
+  .carousel-item-next,
+  .carousel-item-prev,
+  .carousel-item.active {
     display: flex;
+  }
+  .carousel-inner {
+    margin-top: 0rem;
+  }
+
+  .item-1 img,
+  .item-2 img,
+  .item-3 img {
+    height: 40%;
+    width: 40%;
+    margin-bottom: 5rem;
+    margin-right: 4rem;
   }
 }
 
 @media (min-width: 992px) {
+  .homeText {
+    margin-left: 9rem;
+  }
+  /*
+  .nemuButton {
+    display: none;
+  }
+  
+  .functionButtons {
+    margin-left: 15rem;
+    display: flex !important;
+    justify-content: flex-end;
+  }
+ 
+  .h1 {
+    margin-top: 2rem;
+    margin-right: 8rem;
+  }
+ */
+  .findButton,
+  .locationButton,
+  .shoppingButton {
+    margin-right: 2rem;
+  }
+
+  .iconLogo {
+    font-size: 1.8rem;
+  }
+
+  .homeText p {
+    width: 100%;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .homeText h2 {
+    color: var(--secondary-color);
+    font-size: 2.3rem;
+    font-weight: 600;
+  }
+
+  .homeText h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+  }
+
+  .homeText button {
+    border: none;
+    background-color: var(--secondary-color);
+    padding: 0.8rem !important;
+    color: white;
+    font-weight: 900;
+    font-size: 1rem !important;
+    width: 9rem !important;
+  }
+
+  .h1 {
+    margin-left: 3rem !important;
+  }
+
+  .navbarMenu {
+    margin-right: 10rem !important;
+  }
+
+  .navItem {
+    color: var(--text-primary) !important;
+    font-size: 1.2rem !important;
+    color: var(--primary-color) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+  }
+
+  .navItem:hover {
+    color: var(--background-color-dark) !important;
+  }
 }
