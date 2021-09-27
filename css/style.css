@@ -121,6 +121,28 @@ body {
   margin-bottom: 3rem;
 }
 
+.menuCard {
+  background-color: var(--background-color-medium) !important;
+}
+
+
+
+.aboutUs img {
+  height: 80%;
+  width: 80%;
+  padding-left: 9rem;
+}
+.aboutUs h3 {
+  color: var(--titleText-secondary);
+}
+.aboutUs p {
+  color: var(--text-secondary);
+}
+
+.ourSpecial {
+  background-color: var(--background-color-medium);
+}
+
 @media (min-width: 768px) {
   .carousel-item-next,
   .carousel-item-prev,
@@ -139,7 +161,9 @@ body {
     margin-bottom: 5rem;
     margin-right: 4rem;
   }
-}
+
+  /*about us*/
+ 
 
 @media (min-width: 992px) {
   .homeText {
