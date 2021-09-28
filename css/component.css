@@ -82,14 +82,15 @@
   position: absolute;
   top: 1rem;
   left: 17rem;
-  z-index: 10;
+  z-index: 1;
 }
 
 .roundImg {
-  width: 6rem;
-  height: 6rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   object-fit: cover;
+  margin: 0.5rem;
 }
 
 .menuCard_header {
@@ -99,21 +100,26 @@
 }
 
 .quotationMark {
-  font-size: 5rem;
+  font-size: 3rem;
   color: var(--text-secondary);
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 .content {
-  width: 23rem;
-  height: 20rem;
-  padding: 2rem;
-  border: 1px solid black;
+  width: 16rem;
+  height: 18.5rem;
+  padding: 1rem;
+  border: 1px solid var(--text-secondary);
+}
+
+.content_h5 {
+  font-size: 1rem;
+  padding-right: 0.2rem;
 }
 
 .swiper {
-  width: 370px;
-  height: 320px;
+  width: 600px;
+  height: 300px;
 }
 
 /*form*/

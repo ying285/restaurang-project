@@ -7,9 +7,13 @@
   z-index: 15;
 }
 
-.menu li {
+.overlayItem {
   list-style: none;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
+}
+
+.overlayItem a {
+  text-decoration: none;
   color: var(--overlayText);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
 }

@@ -60,11 +60,11 @@
           "
         >
           <div class="navItem"><a>Home</a></div>
-          <div class="navItem"><a>Dish</a></div>
-          <div class="navItem"><a>About</a></div>
-          <div class="navItem"><a>Menu</a></div>
-          <div class="navItem"><a>Reviews</a></div>
-          <div class="navItem"><a>Order</a></div>
+          <div class="navItem"><a href="#dish">Dish</a></div>
+          <div class="navItem"><a href="#aboutUs">About</a></div>
+          <div class="navItem"><a href="#specialDish">Menu</a></div>
+          <div class="navItem"><a href="#reviews">Reviews</a></div>
+          <div class="navItem"><a href="#order">Order</a></div>
         </div>
         <!--navmenu for large screen-->
 
@@ -137,12 +137,12 @@
     <div class="menu hidden">
       <button class="menuCloseButton">&times;</button>
       <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">DISH</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">MENU</a></li>
-        <li><a href="#">REVIEW</a></li>
-        <li><a href="#">ORDER</a></li>
+        <li class="overlayItem"><a href="#">HOME</a></li>
+        <li class="overlayItem"><a href="#dish">DISH</a></li>
+        <li class="overlayItem"><a href="#aboutUs">ABOUT</a></li>
+        <li class="overlayItem"><a href="#specialDish">MENU</a></li>
+        <li class="overlayItem"><a href="#reviews">REVIEW</a></li>
+        <li class="overlayItem"><a href="#order">ORDER</a></li>
       </ul>
     </div>
     <!--menu-->
@@ -251,11 +251,13 @@
           <img src="img/hamburger.png" class="d-block img-3" alt="hamburger" />
         </div>
       </div>
+     
     </div>
     <!--carousel-->
 
     <!--our dish-->
     <section class="container-fluid menuCard mt-3 pb-5">
+       <div id="dish"></div>
       <div class="pageTitle">
         <h3>Our Dishes</h3>
         <h2>POPULAR DISHES</h2>
@@ -367,13 +369,13 @@
 
     <!--about us-->
     <section class="container-fluid mt-3 pb-5">
-
+      <div id="aboutUs"></div>
       <div class="pageTitle">
         <h3>About Us</h3>
         <h2>WHY CHOOSE US</h2>
       </div> 
 
-      <div class="aboutUs row d-flex flex-column">
+      <div class="aboutUs d-flex flex-column flex-sm-row justify-content-sm-around align-items-sm-center">
 
         <div class="aboutUsImg">
 
@@ -384,10 +386,10 @@
         <div class="aboutUsText
          mt-3 w-75 mx-auto ">
 
-          <div class="">
+          <div>
             <h3>The Best Food In The Country</h3>
           </div>
-          <div class="mt-4">
+          <div class="mt-4 ">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea
               reiciendis dicta recusandae itaque deleniti, commodi id illum
@@ -397,21 +399,25 @@
             </p>
           </div>
        </div>
+       </div>
 
         <div class="text-center">
           <button class="btn mt-3">LEARM MORE</button>
         </div>
        
        </div>
+       
     </section>
     <!--about us-->
 
     <!--today's special-->
     <section class="ourSpecial container-fluid pb-5">
+       <div id="specialDish"></div>
       <div class="pageTitle">
         <h3>Our Menu</h3>
         <h2>TODAY'S SPECIAL</h2>
       </div>
+     
       <div class="row justify-content-center">
         <div class="card shadow-5 mt-5 me-4 p-3 col-md-6" style="width: 20rem">
           <div class="menuCard_heart">
@@ -504,7 +510,7 @@
           <div class="menuCard_heart">
             <i class="fas fa-heart"></i>
           </div>
-          <img src="img/image10.jpg" class="card-img-top" alt="image10" />
+          <img src="img/image 7.jpg" class="card-img-top" alt="image10" />
           <div class="">
             <div class="card-body">
               <div class="menuCard_star">
@@ -587,12 +593,14 @@
           </div>
         </div>
       </div>
+      
     </section>
 
     <!--today's special-->
 
     <!--review-->
     <section class="p-4">
+      <div id="reviews"></div>
       <div class="pageTitle">
         <h3>Customer's Review</h3>
         <h2>WHY THEY SAY</h2>
@@ -600,16 +608,16 @@
 
       <!-- reviews-->
 
-      <div class="swiper mt-5">
+      <div class="swiper mt-5" style="width: 73%;">
        
           <!-- Additional required wrapper -->
-          <div class="swiper-wrapper ">
+          <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide ">
               <div class="content">
                 <div class='menuCard_header'>
                  <img src="img/person1.jpg" class="card-img-top roundImg" alt="person1" />
-                 <h5>Lisa White</h5>
+                 <h5 class="content_h5">Lisa White</h5>
                   <i class="fas fa-quote-right quotationMark"></i>
                 </div>
                
@@ -631,13 +639,13 @@
                   </div>
                 </div>
               </div>
-              
+              </div>
             </div>
             <div class="swiper-slide ">
               <div class="content">
                 <div class='menuCard_header'>
                  <img src="img/person2.jpg" class="card-img-top roundImg" alt="person2" />
-                 <h5>Lisa White</h5>
+                 <h5 class="content_h5">Lisa White</h5>
                   <i class="fas fa-quote-right quotationMark"></i>
                 </div>
                
@@ -658,13 +666,42 @@
                   
                   </div>
                 </div>
+              </div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="content">
                 <div class='menuCard_header'>
                  <img src="img/person3.jpg" class="card-img-top roundImg" alt="person3" />
-                 <h5>Lisa White</h5>
+                 <h5 class="content_h5">Lisa White</h5>
+                  <i class="fas fa-quote-right quotationMark"></i>
+                </div>
+               
+                <div class="border-bottom">
+                  <div class="card-body">
+                    <div class="menuCard_star">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <hr class="">
+                    <div class="w-100">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo debitis sapiente ab vel maxime molestias ullam laborum! Similique, iure quia. Minima commodi dignissimos ratione ipsa, quae magni delectus minus praesentium qui possimus fugit eveniet corrupti consectetur dolorem nulla a repellat. Sapiente quo ipsa quaerat et?
+                      </p>
+                  
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide ">
+              <div class="content">
+                <div class='menuCard_header'>
+                 <img src="img/person4.jpg" class="card-img-top roundImg" alt="person4" />
+                 <h5 class="content_h5">Lisa White</h5>
                   <i class="fas fa-quote-right quotationMark"></i>
                 </div>
                
@@ -686,39 +723,13 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="swiper-slide ">
-              <div class="content">
-                <div class='menuCard_header'>
-                 <img src="img/person1.jpg" class="card-img-top roundImg" alt="person1" />
-                 <h5>Lisa White</h5>
-                  <i class="fas fa-quote-right quotationMark"></i>
-                </div>
-               
-                <div class="border-bottom">
-                  <div class="card-body">
-                    <div class="menuCard_star">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <hr class="">
-                    <div class="w-100">
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo debitis sapiente ab vel maxime molestias ullam laborum! Similique, iure quia. Minima commodi dignissimos ratione ipsa, quae magni delectus minus praesentium qui possimus fugit eveniet corrupti consectetur dolorem nulla a repellat. Sapiente quo ipsa quaerat et?
-                      </p>
-                  
-                  </div>
-                </div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="content">
                 <div class='menuCard_header'>
-                 <img src="img/person1.jpg" class="card-img-top roundImg" alt="person1" />
-                 <h5>Lisa White</h5>
+                 <img src="img/person5.jpg" class="card-img-top roundImg" alt="person5" />
+                 <h5 class="content_h5">Lisa White</h5>
                   <i class="fas fa-quote-right quotationMark"></i>
                 </div>
                
@@ -740,12 +751,13 @@
                   </div>
                 </div>
               </div>
+              </div>
             </div>
             <div class="swiper-slide ">
               <div class="content">
                 <div class='menuCard_header'>
-                 <img src="img/person1.jpg" class="card-img-top roundImg" alt="person1" />
-                 <h5>Lisa White</h5>
+                 <img src="img/person6.jpg" class="card-img-top roundImg" alt="person6" />
+                 <h5 class="content_h5">Lisa White</h5>
                   <i class="fas fa-quote-right quotationMark"></i>
                 </div>
                
@@ -766,6 +778,7 @@
                   
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           </div>
@@ -804,53 +817,56 @@
       -->
 
       <!--reviews-->
+      
     </section>
 
     <!--review-->
 
     <!--form-->
     <section class="container-fliud formSection ">
-      
+       <div id="order"></div>
         <div class="pageTitle">
           <h3>Order Now</h3>
           <h2>FREE AND FAST</h2>
         </div>
         
-          
-        <form class="row form p-5 ">
-          <div class="form-group col-md-6 my-3 ">
+       
+        <form class="row row-cols-1 row-cols-md-2 form p-5 ">
+          <div class="form-group offset-3 offset-md-0 my-3 ">
             <label for="exampleFormControlInput1" class="">Your Name</label>
             <input type="text" class="form-control w-50 " id="exampleFormControlInput1">
           </div>
-          <div class="form-group col-md-6 my-3">
+          <div class="form-group offset-3 offset-md-0 my-3">
             <label for="exampleFormControlInput2">Your Order</label>
             <input type="text" class=" form-control w-50" id="exampleFormControlInput2">
           </div>
-          <div class="form-group col-md-6 my-3">
+          <div class="form-group offset-3 offset-md-0 my-3">
             <label for="exampleFormControlInput3">Your Number</label>
             <input type="number" class=" form-control w-50" id="exampleFormControlInput3" >
           </div>
-          <div class="form-group col-md-6 my-3">
+          <div class="form-group offset-3 offset-md-0 my-3">
             <label for="exampleFormControlInput4">Email address</label>
             <input type="email" class=" form-control w-50" id="exampleFormControlInput4" >
           </div>
-          <div class="form-group col-md-6 my-3">
+          <div class="form-group offset-3 offset-md-0 my-3">
             <label for="exampleFormControlInput5">Time of Order</label>
             <input type="email" class=" form-control w-50" id="exampleFormControlInput5" >
           </div>
-          <div class="form-group col-md-6 my-3">
+          <div class="form-group offset-3 offset-md-0 my-3">
             <label for="exampleFormControlInput6">Your Address</label>
             <input type="email" class=" form-control w-50" id="exampleFormControlInput6" >
           </div>
          
          
-          <div class="form-group my-3">
+          <div class="form-group offset-3 offset-md-0 my-3">
             <label for="exampleFormControlTextarea1">Example textarea</label>
             <textarea class="form-control w-50" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
+         
         </form>
      
       </div>
+      
     </section>
 
     <!--form-->
@@ -870,7 +886,7 @@
 
     </div>
     <div class="container-fliud ">
-    <div class="footerText pt-5 row">
+    <div class="footerText pt-4 row">
       <div class="col-12 col-md-6 ">
         <p class="w-75 mx-auto ">Open Hours:
 

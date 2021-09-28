@@ -74,4 +74,18 @@ const swiper = new Swiper(".swiper", {
   pagination: {
     el: ".swiper-pagination",
   },
+
+  // Responsive breakpoints
+  breakpoints: {
+    // Default parameters
+
+    678: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+  },
 });

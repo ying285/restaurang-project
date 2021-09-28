@@ -125,8 +125,6 @@ body {
   background-color: var(--background-color-medium) !important;
 }
 
-
-
 .aboutUs img {
   height: 80%;
   width: 80%;
@@ -161,9 +159,7 @@ body {
     margin-bottom: 5rem;
     margin-right: 4rem;
   }
-
-  /*about us*/
- 
+}
 
 @media (min-width: 992px) {
   .homeText {
@@ -230,15 +226,16 @@ body {
     margin-right: 10rem !important;
   }
 
-  .navItem {
+  .navItem a {
     color: var(--text-primary) !important;
     font-size: 1.2rem !important;
     color: var(--primary-color) !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
+    text-decoration: none !important;
   }
 
-  .navItem:hover {
+  .navItem a:hover {
     color: var(--background-color-dark) !important;
   }
 }
