@@ -1,9 +1,10 @@
 .menu {
-  position: absolute;
-
+  position: relative;
+  /*
   top: 50%;
   left: 50%;
   transform: translate(-45%, -55%);
+  */
   z-index: 15;
 }
 
@@ -15,5 +16,10 @@
 .overlayItem a {
   text-decoration: none;
   color: var(--overlayText);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.overlayItem a:hover {
+  color: var(--text-secondary);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
 }

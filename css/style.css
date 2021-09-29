@@ -70,7 +70,8 @@ body {
 }
 
 .closeButton,
-.locationCloseButton {
+.locationCloseButton,
+.menuCloseButton {
   position: absolute;
   top: -3rem;
   left: 90%;
@@ -79,8 +80,8 @@ body {
   color: var(--overlayText);
   font-size: 3rem;
 }
-
-.menuCloseButton {
+/*
+ {
   position: absolute;
   top: -6rem;
   left: 100%;
@@ -89,6 +90,7 @@ body {
   color: var(--overlayText);
   font-size: 3rem;
 }
+*/
 .homeText {
   margin-left: 4rem;
   margin-top: 3rem;
@@ -159,6 +161,11 @@ body {
     margin-bottom: 5rem;
     margin-right: 4rem;
   }
+
+  .aboutUsText_p {
+    width: 75%;
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -185,6 +192,12 @@ body {
   .locationButton,
   .shoppingButton {
     margin-right: 2rem;
+  }
+
+  .btn_learnmore {
+    width: 9rem !important;
+    padding: 0.7rem;
+    font-size: 1rem;
   }
 
   .iconLogo {
@@ -237,5 +250,9 @@ body {
 
   .navItem a:hover {
     color: var(--background-color-dark) !important;
+  }
+
+  .footerText {
+    font-size: 1rem !important;
   }
 }
