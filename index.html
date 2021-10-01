@@ -31,6 +31,11 @@
     <link rel="stylesheet" href="css/searchPag.css" />
     <link rel="stylesheet" href="css/location.css" />
     <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/aboutUs.css" />
+    <link rel="stylesheet" href="css/ourDish.css" />
+
+
 
     <title>Resto</title>
   </head>
@@ -398,7 +403,7 @@
               reiciendis dicta recusandae itaque deleniti, commodi id illum
               fugiat rerum veritatis harum nesciunt omnis. Maiores adipisci
               culpa nihil quibusdam dolorem molestias sunt reprehenderit nostrum
-              quod! Animi possimus consequuntur magni accusantium distinctio?
+              quod! Animi possimus consequuntur magni accusantium distinctio? 
             </p>
           </div>
        </div>
@@ -832,37 +837,68 @@
           <h3>Order Now</h3>
           <h2>FREE AND FAST</h2>
         </div>
-        <form class="row row-cols-1 row-cols-md-2 form p-5 mx-auto w-75">
-          <div class="form-group my-3 ">
-            <label for="exampleFormControlInput1" class="">Your Name</label>
-            <input type="text" class="form-control " id="exampleFormControlInput1">
-          </div>
-          <div class="form-group my-3">
-            <label for="exampleFormControlInput2">Your Order</label>
+        <form class="row row-cols-1 row-cols-md-2 p-5 mx-auto w-75" id="form">
+         
+          
+          <div class="form-group my-3  position-relative">
+            <label for="exampleFormControlInput2" class="fs-6">Your Order</label>
             <input type="text" class=" form-control" id="exampleFormControlInput2">
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Error Message</small>
+            
           </div>
-          <div class="form-group my-3">
-            <label for="exampleFormControlInput3">Your Number</label>
+
+          <div class="form-group my-3 position-relative">
+            <label for="exampleFormControlInput3" class="fs-6">Your Phone Number</label>
             <input type="number" class=" form-control" id="exampleFormControlInput3" >
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Error Message</small>
           </div>
-          <div class="form-group my-3">
-            <label for="exampleFormControlInput4">Email address</label>
-            <input type="email" class=" form-control" id="exampleFormControlInput4" >
+
+          <div class="form-group my-3 position-relative">
+            <label for="exampleFormControlInput4" class="fs-6">Date of Order</label>
+            <input type="date" class=" form-control" id="exampleFormControlInput4" >
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Error Message</small>
           </div>
-          <div class="form-group my-3">
-            <label for="exampleFormControlInput5">Time of Order</label>
-            <input type="email" class=" form-control" id="exampleFormControlInput5" >
+
+          <div class="form-group my-3 position-relative">
+            <label for="exampleFormControlInput5" class="fs-6">Time of Order</label>
+            <input type="time" class=" form-control" id="exampleFormControlInput5" >
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Error Message</small>
           </div>
-          <div class="form-group my-3">
-            <label for="exampleFormControlInput6">Your Address</label>
+
+          <div class="form-group my-3 position-relative">
+            <label for="exampleFormControlInput6" class="fs-6">Your Address</label>
             <input type="email" class=" form-control" id="exampleFormControlInput6" >
+             <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Error Message</small>
           </div>
+
+          <div class="form-group my-3 position-relative">
+            <label for="exampleFormControlInput7" class="fs-6">Email address</label>
+            <input type="email" class=" form-control" id="exampleFormControlInput7" >
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Error Message</small>
+          </div>
+
           <div class="form-group my-3 w-100">
-            <label for="exampleFormControlTextarea1">Message</label>
+            <label for="exampleFormControlTextarea1" class="fs-6">Message</label>
             <textarea class="form-control w-50" id="exampleFormControlTextarea1" rows="3"></textarea>
+         
+           
           </div>
+
           <div>
-             <button class="btn mt-3">ORDER NOW</button>
+             <button type='button'
+             class="btn formBtn mt-4">ORDER NOW</button>
           </div>
          
         </form>
@@ -883,6 +919,9 @@
       <div class="footer_icon">
         <i class="fab fa-instagram"></i>
       </div>
+     
+
+     
 
     </div>
     <div class="container-fliud" >
@@ -898,6 +937,7 @@
         </p>
       </div>
       <div class="col-12 col-md-6"> 
+       
         <p class="w-75 mx-auto">
         Contact us:
         

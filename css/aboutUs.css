@@ -1,0 +1,36 @@
+.roundImg {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0.5rem;
+}
+
+.menuCard_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quotationMark {
+  font-size: 3rem;
+  color: var(--text-secondary);
+  opacity: 0.2;
+}
+
+.content {
+  width: 16rem;
+  height: 18.5rem;
+  padding: 1rem;
+  border: 1px solid var(--text-secondary);
+}
+
+.content_h5 {
+  font-size: 1rem;
+  padding-right: 0.2rem;
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
+}

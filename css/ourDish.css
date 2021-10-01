@@ -1,0 +1,39 @@
+.card {
+  position: relative;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6) !important;
+  background-color: var(--background-color-dark);
+}
+.menuCard_span {
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 3.5rem;
+  margin-left: 1rem;
+}
+
+.menuCard_title,
+.spcialMenu_title {
+  color: var(--titleText-secondary);
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.spcialMenu_title {
+  color: var(--titleText-primary);
+}
+
+.menuCard_star {
+  margin-bottom: 1.5rem;
+  color: var(--titleText-secondary);
+}
+
+.menuCard_heart {
+  color: var(--titleText-secondary);
+  font-size: 1.3rem;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6) !important;
+  position: absolute;
+  top: 1rem;
+  left: 17rem;
+  z-index: 1;
+}

@@ -80,17 +80,7 @@ body {
   color: var(--overlayText);
   font-size: 3rem;
 }
-/*
- {
-  position: absolute;
-  top: -6rem;
-  left: 100%;
-  border: 0;
-  background-color: transparent;
-  color: var(--overlayText);
-  font-size: 3rem;
-}
-*/
+
 .homeText {
   margin-left: 4rem;
   margin-top: 3rem;
@@ -143,6 +133,19 @@ body {
   background-color: var(--background-color-medium);
 }
 
+/*footer*/
+
+.footer_icon {
+  font-size: 1.5rem;
+}
+
+.footerText {
+  background-color: var(--primary-color);
+
+  color: var(--footerText);
+  font-size: 0.8rem;
+}
+
 @media (min-width: 768px) {
   .carousel-item-next,
   .carousel-item-prev,
@@ -172,22 +175,7 @@ body {
   .homeText {
     margin-left: 9rem;
   }
-  /*
-  .nemuButton {
-    display: none;
-  }
-  
-  .functionButtons {
-    margin-left: 15rem;
-    display: flex !important;
-    justify-content: flex-end;
-  }
- 
-  .h1 {
-    margin-top: 2rem;
-    margin-right: 8rem;
-  }
- */
+
   .findButton,
   .locationButton,
   .shoppingButton {
