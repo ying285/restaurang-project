@@ -96,95 +96,105 @@ const order = document.querySelector("#exampleFormControlInput2");
 const phone = document.querySelector("#exampleFormControlInput3");
 const address = document.querySelector("#exampleFormControlInput6");
 const email = document.querySelector("#exampleFormControlInput7");
-const btn = document.querySelector("formBtn");
+const btn = document.querySelector(".formBtn");
 
 //function add or remove class name
-const setError = (input, message) => {
-  const inputGroup = input.parentElement;
-  inputGroup.classList.add("error");
-  inputGroup.classList.remove("success");
-  const error = inputGroup.querySelector("small");
-  error.innerText = message;
+
+const formValidation = () => {
+  const setError = (input, message) => {
+    const inputGroup = input.parentElement;
+    inputGroup.classList.add("error");
+    inputGroup.classList.remove("success");
+    const error = inputGroup.querySelector("small");
+    error.innerText = message;
+  };
+
+  const setSuccess = (input) => {
+    const inputGroup = input.parentElement;
+    inputGroup.classList.add("success");
+    inputGroup.classList.remove("error");
+  };
+
+  //validate functions for each input
+
+  const validateOrder = (input) => {
+    if (input.value.trim() === "") {
+      setError(input, "Invalid order");
+      return false;
+    } else if (input.value.trim().length < 2) {
+      setError(input, "Please enter at least 2 characters");
+      return false;
+    } else {
+      setSuccess(input);
+      return true;
+    }
+  };
+
+  const validatePhone = (input) => {
+    if (input.value.trim() === "") {
+      setError(input, "Phone Number can't be empty");
+      return false;
+    } else if (input.value.trim().length < 10) {
+      setError(input, "At least 10 numbers");
+      return false;
+    } else {
+      setSuccess(input);
+      return true;
+    }
+  };
+
+  const validateAddress = (input) => {
+    let regEx = /[A-z]{6}(\s)*[0-9]{1,3}$/;
+    if (input.value.trim() === "") {
+      setError(input, "Address can't be empty");
+      return false;
+    } else if (!regEx.test(input.value)) {
+      setError(input, "At least 6 characters and 1 number");
+      return false;
+    } else {
+      setSuccess(input);
+      return true;
+    }
+  };
+
+  const validateEmail = (input) => {
+    let regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+    if (input.value.trim() === "") {
+      setError(input, "Email address can't be empty");
+      return false;
+    } else if (!regEx.test(input.value)) {
+      setError(input, "Email address is not valid");
+      return false;
+    } else {
+      setSuccess(input);
+      return true;
+    }
+  };
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    validateOrder(order);
+    validatePhone(phone);
+    validateAddress(address);
+    validateEmail(email);
+  });
+
+  order.addEventListener("blur", () => {
+    validateAddress(order);
+  });
+
+  phone.addEventListener("blur", () => {
+    validateAddress(phone);
+  });
+
+  address.addEventListener("blur", () => {
+    validateAddress(address);
+  });
+
+  email.addEventListener("blur", () => {
+    validateAddress(email);
+  });
 };
 
-const setSuccess = (input) => {
-  const inputGroup = input.parentElement;
-  inputGroup.classList.add("success");
-  inputGroup.classList.remove("error");
-};
-
-//validate functions for each input
-
-const validateOrder = (input) => {
-  if (input.value.trim() === "") {
-    setError(input, "Invalid order");
-    return false;
-  } else if (input.value.trim().length < 2) {
-    setError(input, "Please enter at least 2 characters");
-    return false;
-  } else {
-    setSuccess(input);
-    return true;
-  }
-};
-
-const validatePhone = (input) => {
-  if (input.value.trim() === "") {
-    setError(input, "Phone Number can't be empty");
-    return false;
-  } else if (input.value.trim().length < 10) {
-    setError(input, "At least 10 numbers");
-    return false;
-  } else {
-    setSuccess(input);
-    return true;
-  }
-};
-
-const validateAddress = (input) => {
-  let regEx = /[A-z]{6}(\s)*[0-9]{1,3}$/;
-  if (input.value.trim() === "") {
-    setError(input, "Address can't be empty");
-    return false;
-  } else if (!regEX.test(input.value)) {
-    setError(input, "At least 6 characters and 1 number");
-    return false;
-  } else {
-    setSuccess(input);
-    return true;
-  }
-};
-
-const validateEmail = (input) => {
-  let regEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
-  if (input.value.trim() === "") {
-    setError(input, "Email address can't be empty");
-    return false;
-  } else if (!regEX.test(input.value)) {
-    setError(input, "Email address is not valid");
-    return false;
-  } else {
-    setSuccess(input);
-    return true;
-  }
-};
-
-/* 
-btn.addEventListener("submit", (e) => {
-  e.preventDefault();
-  validateOrder(order);
-  validatePhone(phone);
-  validateAddress(address);
-  validateEmail(email);
-});
-
-*/
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  validateOrder(order);
-  validatePhone(phone);
-  validateAddress(address);
-  validateEmail(email);
-});
+formValidation();
