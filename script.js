@@ -198,3 +198,194 @@ const formValidation = () => {
 };
 
 formValidation();
+
+//shopping chart
+
+const shoppingChart = document.querySelector(".shoppingButton");
+const buttons = document.querySelectorAll(".chartBtn");
+const chartIcon = document.querySelector(".chart-icon");
+const bookDishes = document.querySelector(".bookDishes");
+const chartOpenButton = document.querySelector(".shoppingButton");
+const chartCloseButton = document.querySelector(".chartCloseButton");
+const chartContainer = document.querySelector(".chart-container");
+
+let dishes = [
+  {
+    name: "steak",
+    tag: "image 1",
+    price: 15.99,
+    order: 0,
+  },
+  {
+    name: "grilled salmon",
+    tag: "image 2",
+    price: 17.99,
+    order: 0,
+  },
+  {
+    name: "salmon salad",
+    tag: "image 3",
+    price: 12.99,
+    order: 0,
+  },
+  {
+    name: "chiken rice",
+    tag: "image 5",
+    price: 14.99,
+    order: 0,
+  },
+  {
+    name: "grilled seabass",
+    tag: "image 6",
+    price: 16.99,
+    order: 0,
+  },
+  {
+    name: "sandwich",
+    tag: "image 7",
+    price: 8.99,
+    order: 0,
+  },
+  {
+    name: "roasted beef",
+    tag: "image 8",
+    price: 20.99,
+    order: 0,
+  },
+  {
+    name: "spring rolls",
+    tag: "image 9",
+    price: 6.99,
+    order: 0,
+  },
+  {
+    name: "hamburger",
+    tag: "image11",
+    price: 7.99,
+    order: 0,
+  },
+  {
+    name: "hot pizza",
+    tag: "image12",
+    price: 16.99,
+    order: 0,
+  },
+];
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", () => {
+    chartIcon.classList.add("remove-hidden");
+    btnItems(dishes[i]);
+    sumPrice(dishes[i]);
+  });
+}
+
+const onLoadDishItems = () => {
+  let dishItems = localStorage.getItem("btnItems");
+  dishItems && (chartIcon.textContent = dishItems);
+};
+
+const btnItems = (dish) => {
+  let dishItems = localStorage.getItem("btnItems");
+  dishItems = +dishItems;
+
+  if (dishItems) {
+    localStorage.setItem("btnItems", dishItems + 1);
+    chartIcon.textContent = dishItems + 1;
+  } else {
+    localStorage.setItem("btnItems", 1);
+    chartIcon.textContent = 1;
+  }
+
+  myDishs(dish);
+};
+
+const myDishs = (dish) => {
+  let dishTags = localStorage.getItem("dishOrders");
+  dishTags = JSON.parse(dishTags);
+
+  if (dishTags !== null) {
+    dishTags[dish.tag] === undefined &&
+      (dishTags = {
+        ...dishTags,
+        [dish.tag]: dish,
+      });
+    dishTags[dish.tag].order += 1;
+  } else {
+    dish.order = 1;
+    dishTags = {
+      [dish.tag]: dish,
+    };
+  }
+
+  localStorage.setItem("dishOrders", JSON.stringify(dishTags));
+};
+
+const sumPrice = (dish) => {
+  //console.log(dish.price);
+  let orderPrice = localStorage.getItem("sumPrice");
+
+  if (orderPrice !== null) {
+    orderPrice = +orderPrice;
+    localStorage.setItem("sumPrice", orderPrice + dish.price);
+  } else {
+    localStorage.setItem("sumPrice", dish.price);
+  }
+};
+
+const display = () => {
+  let orderItems = localStorage.getItem("dishOrders");
+  orderItems = JSON.parse(orderItems);
+  let orderPrice = localStorage.getItem("sumPrice");
+  if (orderItems) {
+    Object.values(orderItems).map((item) => {
+      const html = `<div class='myItems'>
+             <div class='myItem_title'>
+             <i class="fas me-2 chartIcon1 fa-minus-circle"></i>
+             <img class='me-2' src="img/${item.tag}.png">
+             <span>${item.name}</span>
+             </div>
+            
+             <div class='myItem_price'>$${item.price}</div>
+             <div class='myItem_quantity'>
+             <i class="fas fa-angle-left"></i><span>${
+               item.order
+             }</span><i class="fas fa-angle-right"></i>
+             </div>
+               <div class='myItem_total'>
+               $${item.order * item.price}
+               </div>
+             </div>
+           `;
+      bookDishes.insertAdjacentHTML("beforeend", html);
+    });
+
+    const basketTotal = `
+    <div class='basketContainer'>
+ <h4 class='basketTitle'>BASKET TOTAL</h4>
+ <h4 class='basketTotal'>${orderPrice}</h4>
+</div>`;
+
+    bookDishes.insertAdjacentHTML("afterend", basketTotal);
+  }
+};
+onLoadDishItems();
+display();
+
+//open and close shopping chart page page
+const shoppingChartPage = () => {
+  const openShoppingChart = () => {
+    chartContainer.classList.remove("hidden");
+    myOverlay.classList.remove("hidden");
+  };
+
+  const closeShoppingChart = () => {
+    chartContainer.classList.add("hidden");
+    myOverlay.classList.add("hidden");
+  };
+
+  chartOpenButton.addEventListener("click", openShoppingChart);
+  chartCloseButton.addEventListener("click", closeShoppingChart);
+};
+
+shoppingChartPage();

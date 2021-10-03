@@ -79,6 +79,13 @@ body {
   background-color: transparent;
   color: var(--overlayText);
   font-size: 3rem;
+  z-index: 15;
+}
+
+.chartCloseButton {
+  position: absolute;
+
+  z-index: 15;
 }
 
 .homeText {
