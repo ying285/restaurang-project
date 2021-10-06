@@ -208,6 +208,7 @@ const bookDishes = document.querySelector(".bookDishes");
 const chartOpenButton = document.querySelector(".shoppingButton");
 const chartCloseButton = document.querySelector(".chartCloseButton");
 const chartContainer = document.querySelector(".chart-container");
+const basketTotal = document.querySelector(".basketTotal");
 
 // data would be used in this feature(as same as data on UI)
 let dishes = [
@@ -360,6 +361,8 @@ const sumPrice = (dish) => {
 
 //display data to UI
 const display = () => {
+  let total = 0;
+  bookDishes.innerHTML = "";
   //assign value of dishOrders in localStorage to varivable 'orderItems'
   let orderItems = localStorage.getItem("dishOrders");
   // translate json data into js data
@@ -369,6 +372,7 @@ const display = () => {
   if (orderItems) {
     //object.value() is to geting value of object 'orderItems', then add each object's value to html elements
     Object.values(orderItems).map((item) => {
+      total += Number(item.order) * Number(item.price);
       const html = `<div class='myItems'>
              <div class='myItem_title'>
              <a onclick='removeItems(${item.tag})'>
@@ -391,23 +395,29 @@ const display = () => {
            `;
       bookDishes.insertAdjacentHTML("beforeend", html);
     });
-    // add basketTotal item to the end
-    const basketTotal = `
-    <div class='basketContainer'>
- <h4 class='basketTitle'>BASKET TOTAL</h4>
- <h4 class='basketTotal'>$${Number(orderPrice).toFixed(2)}</h4>
-</div>`;
+    basketTotal.textContent = total.toFixed(2);
 
-    bookDishes.insertAdjacentHTML("afterend", basketTotal);
+    // add basketTotal item to the end
+    //     const basketTotal = `
+    //     <div class='basketContainer'>
+    //  <h4 class='basketTitle'>BASKET TOTAL</h4>
+    //  <h4 class='basketTotal'>$${Number(orderPrice).toFixed(2)}</h4>
+    // </div>`;
+
+    //     bookDishes.insertAdjacentHTML("afterend", basketTotal);
   }
 };
 
 //remove items from overlay
 const removeItems = (id) => {
+  console.log("ying");
   let orderItems = localStorage.getItem("dishOrders");
   // translate json data into js data
   orderItems = JSON.parse(orderItems);
-  orderItems.filter((item) => item.id !== id);
+  // orderItems.filter((item) => item.id !== id);
+  delete orderItems[id];
+  localStorage.setItem("dishOrders", JSON.stringify(orderItems));
+  display();
 };
 onLoadDishItems();
 display();
@@ -415,6 +425,7 @@ display();
 //open and close shopping chart page page
 const shoppingChartPage = () => {
   const openShoppingChart = () => {
+    display();
     chartContainer.classList.remove("hidden");
     myOverlay.classList.remove("hidden");
   };
