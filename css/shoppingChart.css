@@ -15,7 +15,7 @@
   background: #e23442;
   border: 1px solid #911f28;
   border-radius: 10px;
-  opacity: 0;
+  opacity: 1;
 }
 
 .remove-hidden {
@@ -25,34 +25,37 @@
 /*order overlay page*/
 
 .chart-container {
-  background-color: burlywood;
+  background-color: var(--primary-color);
   margin: 0 auto;
   margin-top: -3rem;
   text-align: text-center;
   width: 50%;
-  z-index: 150;
+  z-index: 15;
   height: 70vh;
   width: 60vw;
   padding: 4rem 4rem;
   overflow: scroll;
+  position: relative;
 }
 
 .chart-header {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border-bottom: 4px solid lightgray;
 }
 
 .chart-dish {
   width: 45%;
   padding-left: 4rem;
+  font-size: inherit;
 }
 
 .chart-price {
   width: 15%;
   padding-left: 0.5rem;
+  font-size: inherit;
 
   display: flex;
   align-items: center;
@@ -60,14 +63,14 @@
 
 .chart-quantity {
   width: 30%;
-
+  font-size: inherit;
   display: flex;
   align-items: center;
 }
 
 .chart-total {
   width: 10%;
-
+  font-size: inherit;
   display: flex;
   align-items: center;
 }
@@ -97,20 +100,23 @@
 
 .myItem_title {
   width: 45%;
+  font-size: 0.9rem;
 }
 
 .myItem_price {
   width: 10%;
+  font-size: 0.8rem;
 }
 
 .myItem_quantity {
   width: 30%;
-  padding-left: 3rem;
+  padding-left: 2.3rem;
 }
 
 .myItem_total {
   width: 10%;
-  padding-left: 5.2rem;
+  padding-left: 4.6rem;
+  font-size: 0.8rem;
 }
 
 .chartIcon1 {
@@ -126,13 +132,14 @@
 
 .basketTitle {
   margin-right: 2rem;
+  font-size: 1rem;
 }
 
 .basketTotal {
-  margin-right: 2.4rem;
+  margin-right: 1.7rem;
+  font-size: 1rem;
 }
 
-.fa-angle-left,
-.fa-angle-right {
-  color: var(--primary-color);
+.removeBtn {
+  text-decoration: none;
 }

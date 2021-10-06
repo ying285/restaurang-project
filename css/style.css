@@ -84,7 +84,12 @@ body {
 
 .chartCloseButton {
   position: absolute;
-
+  top: 0;
+  left: 90%;
+  border: 0;
+  background-color: transparent;
+  color: var(--overlayText);
+  font-size: 3rem;
   z-index: 15;
 }
 

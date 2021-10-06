@@ -209,139 +209,171 @@ const chartOpenButton = document.querySelector(".shoppingButton");
 const chartCloseButton = document.querySelector(".chartCloseButton");
 const chartContainer = document.querySelector(".chart-container");
 
+// data would be used in this feature(as same as data on UI)
 let dishes = [
   {
-    name: "steak",
+    name: "Steak",
     tag: "image 1",
     price: 15.99,
     order: 0,
   },
   {
-    name: "grilled salmon",
+    name: "Grilled salmon",
     tag: "image 2",
     price: 17.99,
     order: 0,
   },
   {
-    name: "salmon salad",
+    name: "Salmon salad",
     tag: "image 3",
     price: 12.99,
     order: 0,
   },
   {
-    name: "chiken rice",
+    name: "Chiken rice",
     tag: "image 5",
     price: 14.99,
     order: 0,
   },
   {
-    name: "grilled seabass",
+    name: "Grilled seabass",
     tag: "image 6",
     price: 16.99,
     order: 0,
   },
   {
-    name: "sandwich",
+    name: "Sandwich",
     tag: "image 7",
     price: 8.99,
     order: 0,
   },
   {
-    name: "roasted beef",
+    name: "Roasted beef",
     tag: "image 8",
     price: 20.99,
     order: 0,
   },
   {
-    name: "spring rolls",
+    name: "Spring rolls",
     tag: "image 9",
     price: 6.99,
     order: 0,
   },
   {
-    name: "hamburger",
+    name: "Hamburger",
     tag: "image11",
     price: 7.99,
     order: 0,
   },
   {
-    name: "hot pizza",
+    name: "Hot pizza",
     tag: "image12",
     price: 16.99,
     order: 0,
   },
 ];
-
+// loop btn when user clicked
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", () => {
-    chartIcon.classList.add("remove-hidden");
+    // remove hidden class so that show up red counting icon
+    //chartIcon.classList.add("remove-hidden");
+    //call btnItems and transfer dishes's data into btnItems function
     btnItems(dishes[i]);
+    //call btnItems and transfer dishes's data into sum price function
     sumPrice(dishes[i]);
   });
 }
 
+//show the red counting icon on the shopping chart icon
 const onLoadDishItems = () => {
   let dishItems = localStorage.getItem("btnItems");
   dishItems && (chartIcon.textContent = dishItems);
 };
 
+//count and stora total dish quantity in localstorage and show them on UI(red couting icon)
 const btnItems = (dish) => {
   let dishItems = localStorage.getItem("btnItems");
   dishItems = +dishItems;
 
   if (dishItems) {
+    //add a data to extied one in localstorage
     localStorage.setItem("btnItems", dishItems + 1);
+    //show on UI(red counting icon)
     chartIcon.textContent = dishItems + 1;
   } else {
+    //add a data
     localStorage.setItem("btnItems", 1);
+    //show on UI(red counting icon)
     chartIcon.textContent = 1;
   }
-
+  //call function myDish and pass selected data to it
   myDishs(dish);
 };
 
+//distinguish and show different item which passed from function 'btnItems'
 const myDishs = (dish) => {
+  // declare a varible dishTags which get value of 'dishOrders' from localStorage
   let dishTags = localStorage.getItem("dishOrders");
+  //translate json data to js data
   dishTags = JSON.parse(dishTags);
 
+  //if data in localstrage is not empty
   if (dishTags !== null) {
+    //if add a dishTags which is different than previous one(show a underfined) so dishTags euqal previous items plus current one.
     dishTags[dish.tag] === undefined &&
       (dishTags = {
+        //previous items
         ...dishTags,
+        //different item(new item)
         [dish.tag]: dish,
       });
+    // if data in localstrage is not empty, quantity of item plus 1
     dishTags[dish.tag].order += 1;
   } else {
+    //if data in localstrage is empty, quantity of item equal 1, and add dishTags to localStorage as a obj
     dish.order = 1;
+
     dishTags = {
       [dish.tag]: dish,
     };
   }
-
+  // set up a data called dishOrders, its value is dishTags and translate the value to json form
   localStorage.setItem("dishOrders", JSON.stringify(dishTags));
 };
 
+// function for counting sumPrice
 const sumPrice = (dish) => {
   //console.log(dish.price);
+  //get value of 'sumPrice' from localStorage
   let orderPrice = localStorage.getItem("sumPrice");
-
+  //if there are already data there, orderprice(value of sumprice) plus singal dish's price
   if (orderPrice !== null) {
+    // translate string to number
     orderPrice = +orderPrice;
+
     localStorage.setItem("sumPrice", orderPrice + dish.price);
+    //if no data there add passed data's price as sum price.
   } else {
     localStorage.setItem("sumPrice", dish.price);
   }
 };
 
+//display data to UI
 const display = () => {
+  //assign value of dishOrders in localStorage to varivable 'orderItems'
   let orderItems = localStorage.getItem("dishOrders");
+  // translate json data into js data
   orderItems = JSON.parse(orderItems);
+  //assign value of sumPrice in localStorage to varivable 'orderPrice'
   let orderPrice = localStorage.getItem("sumPrice");
   if (orderItems) {
+    //object.value() is to geting value of object 'orderItems', then add each object's value to html elements
     Object.values(orderItems).map((item) => {
       const html = `<div class='myItems'>
              <div class='myItem_title'>
+             <a onclick='removeItems(${item.tag})'>
              <i class="fas me-2 chartIcon1 fa-minus-circle"></i>
+             </a>
              <img class='me-2' src="img/${item.tag}.png">
              <span>${item.name}</span>
              </div>
@@ -359,15 +391,23 @@ const display = () => {
            `;
       bookDishes.insertAdjacentHTML("beforeend", html);
     });
-
+    // add basketTotal item to the end
     const basketTotal = `
     <div class='basketContainer'>
  <h4 class='basketTitle'>BASKET TOTAL</h4>
- <h4 class='basketTotal'>${orderPrice}</h4>
+ <h4 class='basketTotal'>$${Number(orderPrice).toFixed(2)}</h4>
 </div>`;
 
     bookDishes.insertAdjacentHTML("afterend", basketTotal);
   }
+};
+
+//remove items from overlay
+const removeItems = (id) => {
+  let orderItems = localStorage.getItem("dishOrders");
+  // translate json data into js data
+  orderItems = JSON.parse(orderItems);
+  orderItems.filter((item) => item.id !== id);
 };
 onLoadDishItems();
 display();
