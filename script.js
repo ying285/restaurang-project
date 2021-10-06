@@ -375,7 +375,7 @@ const display = () => {
       total += Number(item.order) * Number(item.price);
       const html = `<div class='myItems'>
              <div class='myItem_title'>
-             <a onclick='removeItems(${item.tag})'>
+             <a onclick="removeItems('${item.tag}')">
              <i class="fas me-2 chartIcon1 fa-minus-circle"></i>
              </a>
              <img class='me-2' src="img/${item.tag}.png">
