@@ -89,7 +89,7 @@ body {
   border: 0;
   background-color: transparent;
   color: var(--overlayText);
-  font-size: 3rem;
+  font-size: 2rem;
   z-index: 15;
 }
 

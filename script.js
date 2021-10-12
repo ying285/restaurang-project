@@ -454,7 +454,7 @@ const addItem = (id) => {
   orderPrice = +orderPrice;
 
   let orderItems = localStorage.getItem("dishOrders");
-  // translate json data into js data
+  //translate json data into js data
   orderItems = JSON.parse(orderItems);
 
   if (orderItems) {
@@ -474,16 +474,33 @@ const addItem = (id) => {
 
 //remove items from overlay
 const removeItems = (id) => {
+  let orderPrice = localStorage.getItem("sumPrice");
+
+  let dishItems = localStorage.getItem("btnItems");
+  dishItems = +dishItems;
+
   let orderItems = localStorage.getItem("dishOrders");
   // translate json data into js data
   orderItems = JSON.parse(orderItems);
+
+  console.log(typeof orderItems[id].order);
+  console.log(typeof dishItems);
+
+  chartIcon.textContent = dishItems - orderItems[id].order;
+
+  localStorage.setItem("btnItems", dishItems - orderItems[id].order);
+
+  if (orderPrice !== null) {
+    orderPrice -= orderItems[id].price;
+  }
+  localStorage.setItem("sumPrice", orderPrice);
 
   //delete items
   delete orderItems[id];
   localStorage.setItem("dishOrders", JSON.stringify(orderItems));
 
   //count down number on red counting icon
-  changeIcon();
+  //changeIcon();
   display();
 };
 
