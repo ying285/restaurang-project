@@ -423,23 +423,25 @@ const minsItem = (id) => {
   let dishItems = localStorage.getItem("btnItems");
   dishItems = +dishItems;
 
-  if (orderItems !== null) {
-    orderItems[id].order -= 1;
-    localStorage.setItem("dishOrders", JSON.stringify(orderItems));
-  }
+  if (orderItems !== null) orderItems[id].order -= 1;
 
-  if (orderPrice !== null) {
-    orderPrice -= orderItems[id].price;
-    if (orderPrice < 1) {
-      localStorage.setItem("btnItems", 1);
-      return;
-    }
-    localStorage.setItem("sumPrice", orderPrice);
-  }
+  if (orderItems[id].order < 0) return;
+
+  localStorage.setItem("dishOrders", JSON.stringify(orderItems));
+
+  // if (orderPrice !== null) {
+  //   orderPrice -= orderItems[id].price;
+  //   if (orderPrice < 1) {
+  //     localStorage.setItem("btnItems", 1);
+  //     return;
+  //   }
+  // localStorage.setItem("sumPrice", orderPrice);
+  //}
   if (chartIcon.textContent > 1) {
     chartIcon.textContent = dishItems - 1;
   }
-  if (dishItems > 1) localStorage.setItem("btnItems", dishItems - 1);
+  if (dishItems > 0) localStorage.setItem("btnItems", dishItems - 1);
+  //if (dishItems < 0) return;
 
   display();
 };
