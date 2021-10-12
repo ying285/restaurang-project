@@ -437,7 +437,7 @@ const minsItem = (id) => {
   //   }
   // localStorage.setItem("sumPrice", orderPrice);
   //}
-  if (chartIcon.textContent > 1) {
+  if (chartIcon.textContent > 0) {
     chartIcon.textContent = dishItems - 1;
   }
   if (dishItems > 0) localStorage.setItem("btnItems", dishItems - 1);
