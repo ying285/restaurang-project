@@ -400,24 +400,14 @@ const display = () => {
       bookDishes.insertAdjacentHTML("beforeend", html);
     });
     basketTotal.textContent = total.toFixed(2);
-
-    // add basketTotal item to the end
-    //     const basketTotal = `
-    //     <div class='basketContainer'>
-    //  <h4 class='basketTitle'>BASKET TOTAL</h4>
-    //  <h4 class='basketTotal'>$${Number(orderPrice).toFixed(2)}</h4>
-    // </div>`;
-
-    //     bookDishes.insertAdjacentHTML("afterend", basketTotal);
   }
 };
 
 //minsItem-left
 const minsItem = (id) => {
-  let orderPrice = localStorage.getItem("sumPrice");
+  //let orderPrice = localStorage.getItem("sumPrice");
 
   let orderItems = localStorage.getItem("dishOrders");
-  // translate json data into js data
   orderItems = JSON.parse(orderItems);
 
   let dishItems = localStorage.getItem("btnItems");
@@ -425,23 +415,16 @@ const minsItem = (id) => {
 
   if (orderItems !== null) orderItems[id].order -= 1;
 
-  if (orderItems[id].order < 0) return;
+  if (orderItems[id].order < 0) {
+    return;
+  }
 
   localStorage.setItem("dishOrders", JSON.stringify(orderItems));
 
-  // if (orderPrice !== null) {
-  //   orderPrice -= orderItems[id].price;
-  //   if (orderPrice < 1) {
-  //     localStorage.setItem("btnItems", 1);
-  //     return;
-  //   }
-  // localStorage.setItem("sumPrice", orderPrice);
-  //}
   if (chartIcon.textContent > 0) {
     chartIcon.textContent = dishItems - 1;
   }
   if (dishItems > 0) localStorage.setItem("btnItems", dishItems - 1);
-  //if (dishItems < 0) return;
 
   display();
 };
@@ -449,15 +432,13 @@ const minsItem = (id) => {
 //addItem-right
 
 const addItem = (id) => {
-  let dishItems = localStorage.getItem("btnItems");
-  dishItems = +dishItems;
-
   let orderPrice = localStorage.getItem("sumPrice");
-  orderPrice = +orderPrice;
 
   let orderItems = localStorage.getItem("dishOrders");
-  //translate json data into js data
   orderItems = JSON.parse(orderItems);
+
+  let dishItems = localStorage.getItem("btnItems");
+  dishItems = +dishItems;
 
   if (orderItems) {
     orderItems[id].order += 1;
@@ -478,15 +459,11 @@ const addItem = (id) => {
 const removeItems = (id) => {
   let orderPrice = localStorage.getItem("sumPrice");
 
-  let dishItems = localStorage.getItem("btnItems");
-  dishItems = +dishItems;
-
   let orderItems = localStorage.getItem("dishOrders");
-  // translate json data into js data
   orderItems = JSON.parse(orderItems);
 
-  console.log(typeof orderItems[id].order);
-  console.log(typeof dishItems);
+  let dishItems = localStorage.getItem("btnItems");
+  dishItems = +dishItems;
 
   chartIcon.textContent = dishItems - orderItems[id].order;
 
@@ -501,8 +478,6 @@ const removeItems = (id) => {
   delete orderItems[id];
   localStorage.setItem("dishOrders", JSON.stringify(orderItems));
 
-  //count down number on red counting icon
-  //changeIcon();
   display();
 };
 
